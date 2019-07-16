@@ -1,7 +1,26 @@
 import React from 'react';
-import {StaticQuery} from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 import Post from "./components/Post/Post";
-import {getAllPostsQuery} from "./PostListWrapper.query";
+
+const getAllPostsQuery = graphql`
+	{
+		allContentfulPost {
+			edges {
+				node {
+					backgroundImage {
+						title
+						file {
+							url
+						}
+					}
+					content {
+						content
+					}
+					title
+				}
+			}
+		}
+	}`;
 
 function PostListWrapper() {
 	return (

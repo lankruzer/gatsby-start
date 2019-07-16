@@ -2,6 +2,7 @@ import React from 'react';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 function Post(props) {
+	console.log('props - ', props);
 	const { content } = props;
 	const { backgroundImage } = content;
 
